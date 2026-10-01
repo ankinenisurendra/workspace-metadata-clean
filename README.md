@@ -9,7 +9,7 @@ Fabric-authenticated React + Vite app for workspace metadata governance.
 npm run dev
 ```
 
-Open [https://flat-isle-a544735f64-centralus.webapp.fabricapps.net/) to view the app.
+Open [http://localhost:5173) to view the app.
 
 ## Project structure
 

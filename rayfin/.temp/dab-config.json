@@ -1,0 +1,109 @@
+{
+  "$schema": "https://github.com/Azure/data-api-builder/releases/download/v1.5.56/dab.draft.schema.json",
+  "entities": {
+    "WorkspaceMetadataSubmission": {
+      "source": "WorkspaceMetadataSubmissions",
+      "permissions": [
+        {
+          "role": "authenticated",
+          "actions": [
+            {
+              "action": "create",
+              "policy": {
+                "database": "@claims.sub eq @item.submittedById"
+              }
+            },
+            {
+              "action": "read",
+              "policy": {
+                "database": "@claims.sub eq @item.submittedById"
+              }
+            }
+          ]
+        }
+      ],
+      "x-schema": {
+        "fields": {
+          "id": {
+            "dbType": "UNIQUEIDENTIFIER",
+            "nullable": false
+          },
+          "workspaceId": {
+            "dbType": "NVARCHAR(100)",
+            "nullable": false
+          },
+          "workspaceName": {
+            "dbType": "NVARCHAR(200)",
+            "nullable": false
+          },
+          "description": {
+            "dbType": "NVARCHAR(500)",
+            "nullable": false
+          },
+          "division": {
+            "dbType": "NVARCHAR(2)",
+            "nullable": false
+          },
+          "businessFunction": {
+            "dbType": "NVARCHAR(200)",
+            "nullable": false
+          },
+          "usagePurpose": {
+            "dbType": "NVARCHAR(14)",
+            "nullable": false
+          },
+          "contacts": {
+            "dbType": "NVARCHAR(500)",
+            "nullable": true
+          },
+          "submittedById": {
+            "dbType": "NVARCHAR(256)",
+            "nullable": false
+          },
+          "submittedByEmail": {
+            "dbType": "NVARCHAR(320)",
+            "nullable": true
+          },
+          "submittedAt": {
+            "dbType": "DATETIME2",
+            "nullable": false
+          }
+        },
+        "constraints": {
+          "primaryKey": {
+            "name": "PK_WorkspaceMetadataSubmissions",
+            "columns": [
+              "id"
+            ]
+          },
+          "checkConstraints": [
+            {
+              "name": "CK_WorkspaceMetadataSubmissions_workspaceId_minlen",
+              "expression": "LEN([workspaceId]) >= 1"
+            },
+            {
+              "name": "CK_WorkspaceMetadataSubmissions_workspaceName_minlen",
+              "expression": "LEN([workspaceName]) >= 1"
+            },
+            {
+              "name": "CK_WorkspaceMetadataSubmissions_division",
+              "expression": "[division] IN ('CH', 'CS', 'PH', 'EF')"
+            },
+            {
+              "name": "CK_WorkspaceMetadataSubmissions_businessFunction_minlen",
+              "expression": "LEN([businessFunction]) >= 1"
+            },
+            {
+              "name": "CK_WorkspaceMetadataSubmissions_usagePurpose",
+              "expression": "[usagePurpose] IN ('Productive', 'Non-Productive')"
+            },
+            {
+              "name": "CK_WorkspaceMetadataSubmissions_submittedById_minlen",
+              "expression": "LEN([submittedById]) >= 1"
+            }
+          ]
+        }
+      }
+    }
+  }
+}

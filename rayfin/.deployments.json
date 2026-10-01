@@ -1,0 +1,15 @@
+{
+  "deployments": {
+    "workspace-metadata-catalogue-app": {
+      "fabricItemId": "056c7453-1ff8-43eb-ae65-85f8c916ee21",
+      "fabricApiUrl": "https://05179078260845fe8f63f59340bfedf9.pbidedicated.windows.net/webapi/capacities/05179078-2608-45fe-8f63-f59340bfedf9/workloads/BaaS/BaaSService/automatic/v1/workspaces/af2c0bf9-5167-40c8-9eb4-4b382cd0df01/appbackends/056c7453-1ff8-43eb-ae65-85f8c916ee21/",
+      "fabricWorkspaceId": "af2c0bf9-5167-40c8-9eb4-4b382cd0df01",
+      "fabricTenantId": "fcb2b37b-5da0-466b-9b83-0014b67a7c78",
+      "publishableKey": "pk-FJn7SQUmKnr1IZCvWvSB",
+      "hostingUrl": "https://curly-glen-99707183ed-centralus.webapp.fabricapps.net",
+      "fabricDeepLink": "https://app.fabric.microsoft.com/groups/af2c0bf9-5167-40c8-9eb4-4b382cd0df01/appbackends/056c7453-1ff8-43eb-ae65-85f8c916ee21?ctid=fcb2b37b-5da0-466b-9b83-0014b67a7c78",
+      "deployedAt": "2026-09-28T16:46:34.613Z"
+    }
+  },
+  "active": "workspace-metadata-catalogue-app"
+}
